@@ -11,18 +11,11 @@ fn main():
     text+=" a world on my own"
     print(text.info())
 
+    text.optimize_memory()
+    print(text.info())
+
     text+=",\neverything"
     print(text.info())
 
     text+=" would be nonsense."
-    print(text.info())
-
-    text.optimize_memory()
-    print(text.info())
-
-
-    text+="\nNothing would be what it is"
-    print(text.info())
-
-    text.string+="\nbecause everything would be what it isn't."
     print(text.info())
