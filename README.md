@@ -1,6 +1,6 @@
 # MoString 🔥
 
-This repository explores string concatenation in Mojo and strategies for performance optimization. We introduced `MoString`, a simple wrapper around the standard Mojo `String` struct that features a custom in-place addition operator (`__iadd__`). It primarily enhances performance by employing a pre-allocation memory strategy, akin to what is used in `StringBuilder` implementations.
+This repository explores string concatenation in Mojo and strategies for performance optimization. We introduced `MoString`, a simple wrapper around the standard Mojo `String` struct that features a custom in-place addition operator (`__iadd__`). It primarily enhances performance by employing a pre-allocation memory strategy, akin to what is used in various `StringBuilder` implementations.
 
 We invite everyone interested to contribute different implementations of efficient string concatenation to this repository. Our aim is to build this repository into a valuable resource that could lead to a proposal for the Mojo standard library. Ideally, this repo will eventually render itself obsolete 🔥.
 
@@ -110,8 +110,8 @@ fn main():
     var elapsed2=(now()-start2)/1_000_000_000
 
     var result = MoString()
-    result+="String based: " + str(elapsed1) + " seconds.\n"
-    result+="MoString based: " + str(elapsed2) + " seconds.\n"
+    result+="String based: " + str(elapsed1) + " sec\n"
+    result+="MoString based: " + str(elapsed2) + " sec\n"
     result+="SpeedUp: " + str(elapsed1/elapsed2) + " \n"
    
     print(result)
@@ -120,8 +120,8 @@ fn main():
 Output:
 
 ```bash
-String based: 17.9689 seconds.
-MoString based: 0.004431 seconds.
+String based: 17.9689 sec
+MoString based: 0.004431 sec
 SpeedUp: 4055.269
 ```
 

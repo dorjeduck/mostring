@@ -19,8 +19,8 @@ fn main():
     var elapsed2=(now()-start2)/1_000_000_000
 
     var result = MoString()
-    result+="String based: " + str(elapsed1) + " seconds.\n"
-    result+="MoString based: " + str(elapsed2) + " seconds.\n"
+    result+="String based: " + str(elapsed1) + " sec\n"
+    result+="MoString based: " + str(elapsed2) + " sec\n"
     result+="SpeedUp: " + str(elapsed1/elapsed2) + " \n"
    
     print(result)
