@@ -19,3 +19,6 @@ fn main():
 
     text+=" would be nonsense."
     print(text.info())
+
+    text.string+="Nothing would be what it is because everything would be what it isn't."
+    print(text.info())

@@ -27,6 +27,9 @@ fn main():
     text+=" would be nonsense."
     print(text.info())
 
+    text.string+="Nothing would be what it is because everything would be what it isn't."
+    print(text.info())
+
 ```
 
 Output:
@@ -56,4 +59,9 @@ Alice:
 If I had a world on my own,
 everything would be nonsense.
 (Size: 64+1, Capacity: 68)
+
+Alice:
+If I had a world on my own,
+everything would be nonsense.Nothing would be what it is because everything would be what it isn't.
+(Size: 134+1, Capacity: 135)
 ```
