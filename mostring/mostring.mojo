@@ -48,6 +48,7 @@ struct MoString(CollectionElement):
         if include_string:
             res+="\n"
         return res
+
     @always_inline
     fn __str__(self) -> String:
         return self.string
@@ -57,7 +58,7 @@ struct MoString(CollectionElement):
         """Creates a deep copy of an existing MoString.
 
         Args:
-            existing: The string to copy.
+            existing: The MoString to copy.
         """
         self.string.__copyinit__(existing.string)
     @always_inline
@@ -65,7 +66,7 @@ struct MoString(CollectionElement):
         """Move the value of a MoString.
 
         Args:
-            existing: The string to move.
+            existing: The MoString to move.
         """
         self.string.__moveinit__(existing.string)
 
