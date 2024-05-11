@@ -32,34 +32,41 @@ fn main():
 
 ```
 
-Output:
+Output with additional comments:
 
 ```bash
+# Init
 Alice:
 (Size: 6+1, Capacity: 7)
 
+# Capcacity has be doubled twice
 Alice:
 If I had
 (Size: 15+1, Capacity: 28)
 
+# Capacity needs to be doubled
 Alice:
 If I had a world on my own
 (Size: 33+1, Capacity: 56)
 
+# optimize_memory call, memory/capacity is reduced to size
 Alice:
 If I had a world on my own
 (Size: 33+1, Capacity: 34)
 
+#  Capacity needs to be doubled
 Alice:
 If I had a world on my own,
 everything
 (Size: 45+1, Capacity: 68)
 
+# Enough capacity available 
 Alice:
 If I had a world on my own,
 everything would be nonsense.
 (Size: 64+1, Capacity: 68)
 
+# Direct String operation, capacity = size 
 Alice:
 If I had a world on my own,
 everything would be nonsense.
