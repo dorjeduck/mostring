@@ -39,12 +39,12 @@ Output with additional comments:
 Alice:
 (Size: 6+1, Capacity: 7)
 
-# Capcacity has be doubled twice
+# Capcacity doubled twice
 Alice:
 If I had
 (Size: 15+1, Capacity: 28)
 
-# Capacity needs to be doubled
+# Capacity doubled
 Alice:
 If I had a world on my own
 (Size: 33+1, Capacity: 56)
@@ -54,7 +54,7 @@ Alice:
 If I had a world on my own
 (Size: 33+1, Capacity: 34)
 
-#  Capacity needs to be doubled
+#  Capacity doubled
 Alice:
 If I had a world on my own,
 everything
