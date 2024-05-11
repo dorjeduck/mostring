@@ -35,7 +35,7 @@ struct MoString:
     fn info(self,include_string:Bool=True) -> String:
         var res:String = ""
         if include_string:
-            res += "'" + self.string + "'\n"
+            res +=  self.string + "\n"
         res += "(Size: " + str(self.string._buffer.size-1) + '+1'  + ", Capacity: " + str(self.string._buffer.capacity) + ")"
         if include_string:
             res+="\n"
