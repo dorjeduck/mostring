@@ -128,7 +128,7 @@ SpeedUp: 4055.269
 
 ## Contribute Your Implementation
 
-Calling all Mojo wizards, we’re looking for your magic! Contribute your implementation to this repository to help advance the community insights into efficient string concatenation in Mojo. PRs most welcome 🔥
+Calling all Mojo wizards, we’re looking for your magic! Contribute your implementation to this repository to help advance the community insights into efficient string concatenation in Mojo. Please don't hestiate to share whatever you come up with, this is not a competion. PRs most welcome 🔥
 
 ## License
 
