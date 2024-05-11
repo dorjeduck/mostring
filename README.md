@@ -100,13 +100,13 @@ fn main():
 
     var start1 = now()
     var res1=String("")  
-    for i in range(NUM):
+    for _ in range(NUM):
         res1+=STR
     var elapsed1=(now()-start1)/1_000_000_000
      
     var start2 = now()
     var res2= MoString()
-    for i in range(NUM):
+    for _ in range(NUM):
         res2+=STR
     var elapsed2=(now()-start2)/1_000_000_000
 
