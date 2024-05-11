@@ -27,7 +27,7 @@ fn main():
     text+=" would be nonsense."
     print(text.info())
 
-    text.string+="Nothing would be what it is because everything would be what it isn't."
+    text.string+="\nNothing would be what it is\nbecause everything would be what it isn't."
     print(text.info())
 
 ```
@@ -62,6 +62,8 @@ everything would be nonsense.
 
 Alice:
 If I had a world on my own,
-everything would be nonsense.Nothing would be what it is because everything would be what it isn't.
-(Size: 134+1, Capacity: 135)
+everything would be nonsense.
+Nothing would be what it is
+because everything would be what it isn't.
+(Size: 135+1, Capacity: 136)
 ```
