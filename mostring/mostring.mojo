@@ -1,5 +1,5 @@
 
-struct MoString:
+struct MoString(CollectionElement):
     var string:String
     fn __init__(inout self,string:StringRef="",*,capacity:Int = 1):
 
@@ -51,3 +51,22 @@ struct MoString:
     @always_inline
     fn __str__(self) -> String:
         return self.string
+
+    @always_inline
+    fn __copyinit__(inout self, existing: Self):
+        """Creates a deep copy of an existing MoString.
+
+        Args:
+            existing: The string to copy.
+        """
+        self.string.__copyinit__(existing.string)
+    @always_inline
+    fn __moveinit__(inout self, owned existing: Self):
+        """Move the value of a MoString.
+
+        Args:
+            existing: The string to move.
+        """
+        self.string.__moveinit__(existing.string)
+
+
