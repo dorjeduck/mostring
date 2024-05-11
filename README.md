@@ -11,7 +11,7 @@ This demo aims to highlight the memory management of MoString:
 - The capacity (allocated memory) increases only when necessary.
 - The current size is displayed as `X+1`, where "+1" represents the trailing null terminator each String in Mojo contains.
 - Use the `optimize_memory` method to minimize the allocated memory to what's needed (`capacity=size`).
-Access the underlying String variable through `mostring_var.string` for standard String operations, including the use of `+=`.
+- Access the underlying String variable through `mostring_var.string` for standard String operations, including the use of `+=`.
 
 ```python
 from mostring import MoString
@@ -83,3 +83,48 @@ Nothing would be what it is
 because everything would be what it isn't.
 (Size: 135+1, Capacity: 136)
 ```
+
+## Benchmark
+
+To test the concatenation speed of `MoString`, we concatenate the phrase 'White Rabbit' 100l times. We observe a ~4000x speed improvement over the standard String for this task on our machine. We invite Mojo wizards out there to contribute their implementations, enhancing our benchmark and furthering our collective understanding of efficient string concatenation in Mojo 🔥.
+
+```python
+from time import now
+
+from mostring import MoString
+
+fn main():
+    alias NUM = 100_000
+    alias STR = "White Rabbit"
+
+    var start1 = now()
+    var res1=String("")  
+    for i in range(NUM):
+        res1+=STR
+    var elapsed1=(now()-start1)/1_000_000_000
+     
+    var start2 = now()
+    var res2= MoString()
+    for i in range(NUM):
+        res2+=STR
+    var elapsed2=(now()-start2)/1_000_000_000
+
+    var result = MoString()
+    result+="String based: " + str(elapsed1) + " seconds.\n"
+    result+="MoString based: " + str(elapsed2) + " seconds.\n"
+    result+="SpeedUp: " + str(elapsed1/elapsed2) + " \n"
+   
+    print(result)
+```
+
+Output:
+
+```bash
+String based: 17.9689 seconds.
+MoString based: 0.004431 seconds.
+SpeedUp: 4055.269
+```
+
+## License
+
+MIT
