@@ -86,7 +86,7 @@ because everything would be what it isn't.
 
 ## Benchmark
 
-To test the concatenation speed of `MoString`, we concatenate the phrase 'White Rabbit' 100l times. We observe a ~4000x speed improvement over the standard String for this task on our machine. We invite Mojo wizards out there to contribute their implementations, enhancing our benchmark and furthering our collective understanding of efficient string concatenation in Mojo 🔥.
+To test the concatenation speed of `MoString`, we concatenate the phrase 'White Rabbit' 100k times. We observe a ~4000x speed improvement over the standard String for this task on our machine.
 
 ```python
 from time import now
@@ -124,6 +124,8 @@ String based: 17.9689 seconds.
 MoString based: 0.004431 seconds.
 SpeedUp: 4055.269
 ```
+
+Calling all Mojo wizards, we’re looking for your magic! Contribute your implementations to this repo to help advance all our knowledge of efficient string concatenation in Mojo 🔥.
 
 ## License
 
