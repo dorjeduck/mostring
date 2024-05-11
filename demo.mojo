@@ -5,15 +5,24 @@ fn main():
     var text = MoString("Alice:")
     print(text.info())
 
-    text+=" If I had"
+    text+="\nIf I had"
     print(text.info())
 
-    text.string +=" a world on my own"
+    text+=" a world on my own"
     print(text.info())
 
-    text+=", everything would be nonsense."
+    text+=",\neverything"
+    print(text.info())
+
+    text+=" would be nonsense."
     print(text.info())
 
     text.optimize_memory()
     print(text.info())
-   
+
+
+    text+="\nNothing would be what it is"
+    print(text.info())
+
+    text.string+="\nbecause everything would be what it isn't."
+    print(text.info())
