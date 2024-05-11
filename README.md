@@ -4,9 +4,9 @@ This repository explores string concatenation in [Mojo](https://docs.modular.com
 
 We invite everyone interested to contribute different implementations of efficient string concatenation to this repository. Our aim is to build this repository into a valuable resource that could lead to a proposal for the Mojo standard library. Ideally, this repo will eventually render itself obsolete 🔥.
 
-## Demo
+## Memory Management
 
-This demo aims to highlight the memory management of `MoString`:
+This following demo aims to showcase the memory management of `MoString`:
 
 - The capacity (allocated memory) is increased only when necessary.
 - When additional memory is needed, the capacity is doubled. This allocation strategy is designed to minimize future memory allocations by providing extra memory space before it's actually required.
