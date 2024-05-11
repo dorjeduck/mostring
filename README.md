@@ -8,7 +8,8 @@ We invite everyone interested to contribute different implementations of efficie
 
 This demo aims to highlight the memory management of `MoString`:
 
-- The capacity (allocated memory) increases only when necessary.
+- The capacity (allocated memory) is increased only when necessary.
+- When additional memory is needed, the capacity is doubled. This allocation strategy is designed to minimize future memory allocations by providing extra memory space before it's actually required.
 - Use the `optimize_memory` method to minimize the allocated memory to what's needed (`capacity=size`).
 - Access the underlying String variable through `mostring_var.string` for standard String operations, including the use of `+=`.
 - The current size is displayed as `X+1`, where "+1" represents the trailing null terminator each String in Mojo contains.
