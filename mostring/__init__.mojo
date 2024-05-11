@@ -1,0 +1,1 @@
+from .mostring import MoString
