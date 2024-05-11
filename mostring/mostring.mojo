@@ -1,7 +1,15 @@
 
 struct MoString:
     var string:String
-    fn __init__(inout self,string:String="",*,capacity:Int = 1):
+    fn __init__(inout self,string:StringRef="",*,capacity:Int = 1):
+
+        """Construct a MoString from a StringRef object.
+
+        Args:
+            string: The input StringRef.
+            capacity: The requested initial memory capacity.
+        """
+
         self.string=string
         if capacity>1 and capacity>self.string._buffer.capacity:
             self.string._buffer._realloc(capacity)
