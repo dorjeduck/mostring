@@ -43,7 +43,7 @@ fn main():
 
 Output with additional comments:
 
-```python
+```
 # Init
 Alice:
 (Size: 6+1, Capacity: 7)
