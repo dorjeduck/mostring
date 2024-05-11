@@ -126,9 +126,9 @@ MoString based: 0.004431 sec
 SpeedUp: 4055.269
 ```
 
-## Contribute Your Implementations
+## Contribute Your Implementation
 
-Calling all Mojo wizards, we’re looking for your magic! Contribute your implementations to this repository to help advance the community insights into efficient string concatenation in Mojo. PRs most welcome 🔥
+Calling all Mojo wizards, we’re looking for your magic! Contribute your String related implementation to this repository to help advance the community insights into efficient string concatenation in Mojo. PRs most welcome 🔥
 
 ## License
 
