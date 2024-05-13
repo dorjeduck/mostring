@@ -134,9 +134,6 @@ We also included the `MoList` struct to this repo.
  
  In the following demo, we compare the performance of the standard List's `extend` and `append` methods with the `extend` method of `MoList`. While the `extend` method of the standard `List` performs suboptimal in this demo, its `append` method closely approaches the performance of `MoList extend`, which still delivers a speedup of approximately 1.5 times.
 
-
- While the append method of List does employ an ahead of time memory allocation policy, the extend method doesnt. MoList implements a custom extend method which takes advantage of ahead of time allocation. In this demo we compare the standard List extend, append and the extend method of MoList. While the stand List extend performs poor in this demo, the standard List append method is close to what MoList extend achieves.
-
 ```rust
 from time import now
 
