@@ -126,69 +126,6 @@ MoString based: 0.004431 sec
 SpeedUp: 4055.269
 ```
 
-## MoList
-
-We also included the `MoList` struct to this repo.
-
- The `extend` method of the standard Mojo `List` does not employ an ahead-of-time memory allocation policy (`List append()` does). `MoList` improves upon this by introducing a custom extend method that utilizes ahead-of-time allocation. 
- 
- In the following demo, we compare the performance of the standard List's `extend` and `append` methods with the `extend` method of `MoList`. While the `extend` method of the standard `List` performs suboptimal in this demo, its `append` method closely approaches the performance of `MoList extend`, which still delivers a speedup of approximately 1.5 times.
-
-```rust
-from time import now
-
-from mostring import MoString,MoList
-
-fn main():
-    alias NUM = 100000
-
-    alias EXTEND = List(1,2,5,7,5,7,1,3)
-    
-    var start = now()
-    var res1=List[Int]()
-    for _ in range(NUM):
-        res1.extend(EXTEND)
-    var elapsed1=(now()-start)/1_000_000_000
-     
-    start = now()
-    var res2= List[Int]()
-    for _ in range(NUM):
-        for j in List(1,2,5,7,5,7,1,3,3,4,5,6,6):
-            res2.append(j[])
-
-    var elapsed2=(now()-start)/1_000_000_000
-
-    start = now()
-    var res3= MoList[Int]()
-    for _ in range(NUM):
-        res3.extend(EXTEND)
-    var elapsed3=(now()-start)/1_000_000_000
-
-
-    var result = MoString()
-    result+="List extend: " + str(elapsed1) + " sec\n"
-    result+="\nList append: " + str(elapsed2) + " sec\n"
-    result+="SpeedUp: " + str(elapsed1/elapsed2) + " \n"
-    result+="\nMoList extend: " + str(elapsed3) + " sec\n"
-    result+="SpeedUp to List extend: " + str(elapsed1/elapsed3) + " \n"
-    result+="SpeedUp to List append: " + str(elapsed2/elapsed3) + " \n"
-   
-    print(result)
-```
-
-Output:
-
-```
-List extend: 22.092 sec
-
-List append: 0.00663 sec
-SpeedUp: 3331
-
-MoList extend: 0.004089 sec
-SpeedUp to List extend: 5403 
-SpeedUp to List append: 1.62 
-```
-
 ## Contribute Your Implementation
 
 Calling all Mojo wizards, we’re looking for your magic! Contribute your implementation to this repository to help advance the community insights into efficient string concatenation in Mojo. And please don't hestiate to share whatever you come up with, this is not a competion. PRs most welcome 🔥
