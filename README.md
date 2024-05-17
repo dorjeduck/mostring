@@ -85,6 +85,10 @@ because everything would be what it isn't.
 (Size: 135+1, Capacity: 136)
 ```
 
+## MEM_AHEAD_FACTOR parameter for MoString
+
+We have introduced a new optional parameter for the `MoString` struct: `MEM_AHEAD_FACTOR`. This integer parameter allows you to specify the factor by which memory should be increased when additional memory is needed. The default value is 2, and it must be an integer value greater than or equal to 2. In the following benchmark we use `MoString` and `MoSting[MEM_AHEAD_FACTOR=16]` with the standard `String` implementation. 
+
 ## Benchmark
 
 To test the concatenation speed of `MoString`, we concatenate the phrase 'White Rabbit' 100k times. We observe a ~4000x speed improvement over the standard String for this task on our machine.
@@ -98,22 +102,32 @@ fn main():
     alias NUM = 100_000
     alias STR = "White Rabbit"
 
-    var start1 = now()
+    var start = now()
     var res1=String("")  
     for _ in range(NUM):
         res1+=STR
-    var elapsed1=(now()-start1)/1_000_000_000
+    var elapsed1=(now()-start)/1_000_000_000
      
-    var start2 = now()
+    start = now()
     var res2= MoString()
     for _ in range(NUM):
         res2+=STR
-    var elapsed2=(now()-start2)/1_000_000_000
+    res2.optimize_memory()
+    var elapsed2=(now()-start)/1_000_000_000
+
+    start = now()
+    var res3= MoString[16]()
+    for _ in range(NUM):
+        res3+=STR
+    res3.optimize_memory()
+    var elapsed3=(now()-start)/1_000_000_000
 
     var result = MoString()
     result+="String based: " + str(elapsed1) + " sec\n"
-    result+="MoString based: " + str(elapsed2) + " sec\n"
+    result+="\nMoString based: " + str(elapsed2) + " sec\n"
     result+="SpeedUp: " + str(elapsed1/elapsed2) + " \n"
+    result+="\nMoString[16] based: " + str(elapsed3) + " sec\n"
+    result+="SpeedUp: " + str(elapsed1/elapsed3) + " \n"
    
     print(result)
 ```
@@ -121,9 +135,13 @@ fn main():
 Output:
 
 ```bash
-String based: 17.9689 sec
-MoString based: 0.004431 sec
-SpeedUp: 4055.269
+String based: 26.020166 sec
+
+MoString based: 0.0069680000000000002 sec
+SpeedUp: 3734.2373708381169 
+
+MoString[16] based: 0.0064400000000000004 sec
+SpeedUp: 4040.3984472049688 
 ```
 
 ## Contribute Your Implementation

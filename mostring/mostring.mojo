@@ -1,12 +1,14 @@
 
-struct MoString(CollectionElement):
+struct MoString[MEM_AHEAD_FACTOR:Int = 2](CollectionElement):
+    
     var string:String
     fn __init__(inout self,string:StringRef="",*,capacity:Int = 1):
-
-        """Construct a MoString from a StringRef object.
-
+        constrained[MEM_AHEAD_FACTOR>=2]()
+        """Construct a MoString from a String object.
+        Parameters:
+            MEM_AHEAD_FACTOR: The factor by which the allocated memory is increased if needed.
         Args:
-            string: The input StringRef.
+            string: The input String.
             capacity: The requested initial memory capacity.
         """
 
@@ -25,7 +27,7 @@ struct MoString(CollectionElement):
         var realloc = False
         
         while cap < total_len+ 1 :
-            cap *= 2
+            cap *= MEM_AHEAD_FACTOR
             realloc = True
         if realloc:
             self.string._buffer._realloc(cap)
