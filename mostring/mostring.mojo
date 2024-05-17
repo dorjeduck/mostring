@@ -1,5 +1,5 @@
 
-struct MoString[MEM_AHEAD_FACTOR:Int = 2](CollectionElement):
+struct MoString[MEM_AHEAD_FACTOR:Float32 = 2](CollectionElement):
     
     var string:String
     fn __init__(inout self,string:StringRef="",*,capacity:Int = 1):
@@ -27,7 +27,7 @@ struct MoString[MEM_AHEAD_FACTOR:Int = 2](CollectionElement):
         var realloc = False
         
         while cap < total_len+ 1 :
-            cap *= MEM_AHEAD_FACTOR
+            cap = int(MEM_AHEAD_FACTOR*cap)
             realloc = True
         if realloc:
             self.string._buffer._realloc(cap)

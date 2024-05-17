@@ -1,6 +1,6 @@
 # MoString 🔥
 
-This repository explores string concatenation in [Mojo](https://docs.modular.com/mojo) and strategies for performance optimization. We introduced `MoString`, a simple wrapper around the standard Mojo `String` struct that features a custom in-place addition operator (`__iadd__`). It primarily enhances performance by employing a pre-allocation memory strategy, akin to what is used in various `StringBuilder` implementations.
+This repository explores string concatenation in [Mojo](https://docs.modular.com/mojo) and strategies for performance optimization. We introduce `MoString`, a simple wrapper around the standard Mojo `String` struct that features a custom in-place addition operator (`__iadd__`). It primarily enhances performance by employing a pre-allocation memory strategy, akin to what is used in various `StringBuilder` implementations.
 
 We invite everyone interested to contribute different implementations of efficient string concatenation to this repository. Our aim is to build this repository into a valuable resource that could lead to a proposal for the Mojo standard library. Ideally, this repo will eventually render itself obsolete 🔥.
 
@@ -87,7 +87,7 @@ because everything would be what it isn't.
 
 ### MEM_AHEAD_FACTOR parameter for MoString
 
-We have introduced a new optional parameter for the `MoString` struct: `MEM_AHEAD_FACTOR`. This integer parameter allows you to specify the factor by which memory should be increased when additional memory is needed. The default value is 2, and it must be an integer value greater than or equal to 2. In the following benchmark we compare `MoString` and `MoSting[MEM_AHEAD_FACTOR=16]` with the standard `String` implementation. 
+We introduce a new optional parameter for the `MoString` struct: `MEM_AHEAD_FACTOR`. This parameter allows you to specify the factor by which memory should be increased when additional memory is needed. The default value is 2, and it must be a number greater than or equal to 2. In the following benchmark we compare `MoString` and `MoSting[MEM_AHEAD_FACTOR=16]` with the standard `String` implementation. 
 
 ## Benchmark
 
