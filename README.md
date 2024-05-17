@@ -85,9 +85,9 @@ because everything would be what it isn't.
 (Size: 135+1, Capacity: 136)
 ```
 
-## MEM_AHEAD_FACTOR parameter for MoString
+### MEM_AHEAD_FACTOR parameter for MoString
 
-We have introduced a new optional parameter for the `MoString` struct: `MEM_AHEAD_FACTOR`. This integer parameter allows you to specify the factor by which memory should be increased when additional memory is needed. The default value is 2, and it must be an integer value greater than or equal to 2. In the following benchmark we use `MoString` and `MoSting[MEM_AHEAD_FACTOR=16]` with the standard `String` implementation. 
+We have introduced a new optional parameter for the `MoString` struct: `MEM_AHEAD_FACTOR`. This integer parameter allows you to specify the factor by which memory should be increased when additional memory is needed. The default value is 2, and it must be an integer value greater than or equal to 2. In the following benchmark we compare `MoString` and `MoSting[MEM_AHEAD_FACTOR=16]` with the standard `String` implementation. 
 
 ## Benchmark
 
