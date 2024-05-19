@@ -87,7 +87,7 @@ because everything would be what it isn't.
 
 ### MEM_AHEAD_FACTOR parameter for MoString
 
-We introduce a new optional parameter for the `MoString` struct: `MEM_AHEAD_FACTOR`. This parameter allows you to specify the factor by which memory should be increased when additional memory is needed. The default value is 2, and it must be a number greater than or equal to 2. In the following benchmark we compare `MoString` and `MoSting[MEM_AHEAD_FACTOR=16]` with the standard `String` implementation. 
+We introduce a new optional parameter for the `MoString` struct: `MEM_AHEAD_FACTOR`. This parameter allows you to specify the factor by which memory should be increased when additional memory is needed. The default value is 2, and it must be a number greater than or equal to 1.25 . In the following benchmark we compare `MoString` and `MoSting[MEM_AHEAD_FACTOR=16]` with the standard `String` implementation. 
 
 ## Benchmark
 

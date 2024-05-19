@@ -3,7 +3,7 @@ struct MoString[MEM_AHEAD_FACTOR:Float32 = 2](CollectionElement):
     
     var string:String
     fn __init__(inout self,string:StringRef="",*,capacity:Int = 1):
-        constrained[MEM_AHEAD_FACTOR>=2]()
+        constrained[MEM_AHEAD_FACTOR>=1.25]()
         """Construct a MoString from a String object.
         Parameters:
             MEM_AHEAD_FACTOR: The factor by which the allocated memory is increased if needed.
