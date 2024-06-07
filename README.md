@@ -1,6 +1,6 @@
 # MoString 🔥
 
-This repository explores string concatenation in [Mojo](https://docs.modular.com/mojo) and strategies for performance optimization. We introduce `MoString`, a simple wrapper around the standard Mojo `String` struct that features a custom in-place addition operator (`__iadd__`). It primarily enhances performance by employing a pre-allocation memory strategy, akin to what is used in various `StringBuilder` implementations.
+This repository explores string concatenation in [Mojo, v24.4](https://docs.modular.com/mojo) and strategies for performance optimization. We introduce `MoString`, a simple wrapper around the standard Mojo `String` struct that features a custom in-place addition operator (`__iadd__`). It primarily enhances performance by employing a pre-allocation memory strategy, akin to what is used in various `StringBuilder` implementations. 
 
 We invite everyone interested to contribute different implementations of efficient string concatenation to this repository. Our aim is to build this repository into a valuable resource that could lead to a proposal for the Mojo standard library. Ideally, this repo will eventually render itself obsolete 🔥.
 

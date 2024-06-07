@@ -33,7 +33,7 @@ struct MoString[MEM_AHEAD_FACTOR:Float32 = 2](CollectionElement):
             self.string._buffer._realloc(cap)
 
         # Copy the data alongside the terminator.
-        memcpy(self.string._as_ptr() + self_len, other._as_ptr(), other_len + 1)
+        memcpy(self.string.unsafe_ptr() + self_len, other.unsafe_ptr(), other_len + 1)
 
         #Adjust the size
         self.string._buffer.size = total_len+1
