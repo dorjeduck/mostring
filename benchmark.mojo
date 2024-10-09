@@ -33,5 +33,5 @@ fn main():
     result+="\nMoString[16] based: " + str(elapsed3) + " sec\n"
     result+="SpeedUp: " + str(elapsed1/elapsed3) + " \n"
    
-    print(result)
+    print(result.string)
 

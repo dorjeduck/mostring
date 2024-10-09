@@ -1,5 +1,6 @@
+from memory import memcpy
 
-struct MoString[MEM_AHEAD_FACTOR:Float32 = 2](CollectionElement):
+struct MoString[MEM_AHEAD_FACTOR:Float32 = 2](CollectionElement,Stringable):
     
     var string:String
     fn __init__(inout self,string:StringRef="",*,capacity:Int = 1):
