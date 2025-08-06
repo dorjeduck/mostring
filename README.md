@@ -1,10 +1,20 @@
 # MoString 🔥
 
-> **Note**: With the latest Mojo releases, the standard `String` implementation has been highly optimized for concatenation performance, making this repository largely obsolete. The techniques explored here were valuable for earlier versions of Mojo, but the standard library now incorporates similar optimizations.
+![Status](https://img.shields.io/badge/status-archived-red) ![Status](https://img.shields.io/badge/mojo-legacy-orange)
 
-This repository explores string concatenation in [Mojo 24.5](https://docs.modular.com/mojo) and strategies for performance optimization. We introduce `MoString`, a simple wrapper around the standard Mojo `String` struct that features a custom in-place addition operator (`__iadd__`). It primarily enhances performance by employing a pre-allocation memory strategy, akin to what is used in various `StringBuilder` implementations. 
+## ⚠️ Repository Status## Historical Context
 
-We invite everyone interested to contribute different implementations of efficient string concatenation to this repository. Our aim is to build this repository into a valuable resource that could lead to a proposal for the Mojo standard library. Ideally, this repo will eventually render itself obsolete 🔥.
+This repository explored efficient string concatenation techniques in early Mojo versions. The techniques demonstrated here (pre-allocation strategies, capacity doubling) are similar to those now incorporated in the modern Mojo standard library's `String` implementation.
+
+**Note**: This repository is archived and no longer accepting contributions. For current Mojo string optimization techniques, please refer to the official [Mojo documentation](https://docs.modular.com/mojo).
+
+---
+
+## About This Project
+
+This repository explored string concatenation in [Mojo 24.5](https://docs.modular.com/mojo) and strategies for performance optimization. It introduced `MoString`, a simple wrapper around the standard Mojo `String` struct that featured a custom in-place addition operator (`__iadd__`). It primarily enhanced performance by employing a pre-allocation memory strategy, akin to what is used in various `StringBuilder` implementations.
+
+The original goal was to build this repository into a valuable resource that could lead to a proposal for the Mojo standard library. **This goal has been achieved** - the Mojo standard library now incorporates similar optimizations, making this repository obsolete as intended 🔥.
 
 ## Memory Management
 
