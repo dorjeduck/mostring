@@ -1,5 +1,7 @@
 # MoString 🔥
 
+> **Note**: With the latest Mojo releases, the standard `String` implementation has been highly optimized for concatenation performance, making this repository largely obsolete. The techniques explored here were valuable for earlier versions of Mojo, but the standard library now incorporates similar optimizations.
+
 This repository explores string concatenation in [Mojo 24.5](https://docs.modular.com/mojo) and strategies for performance optimization. We introduce `MoString`, a simple wrapper around the standard Mojo `String` struct that features a custom in-place addition operator (`__iadd__`). It primarily enhances performance by employing a pre-allocation memory strategy, akin to what is used in various `StringBuilder` implementations. 
 
 We invite everyone interested to contribute different implementations of efficient string concatenation to this repository. Our aim is to build this repository into a valuable resource that could lead to a proposal for the Mojo standard library. Ideally, this repo will eventually render itself obsolete 🔥.
@@ -123,11 +125,11 @@ fn main():
     var elapsed3=(now()-start)/1_000_000_000
 
     var result = MoString()
-    result+="String based: " + str(elapsed1) + " sec\n"
-    result+="\nMoString based: " + str(elapsed2) + " sec\n"
-    result+="SpeedUp: " + str(elapsed1/elapsed2) + " \n"
-    result+="\nMoString[16] based: " + str(elapsed3) + " sec\n"
-    result+="SpeedUp: " + str(elapsed1/elapsed3) + " \n"
+    result+="String based: " + String(elapsed1) + " sec\n"
+    result+="\nMoString based: " + String(elapsed2) + " sec\n"
+    result+="SpeedUp: " + String(elapsed1/elapsed2) + " \n"
+    result+="\nMoString[16] based: " + String(elapsed3) + " sec\n"
+    result+="SpeedUp: " + String(elapsed1/elapsed3) + " \n"
    
     print(result.string)
 ```
