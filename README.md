@@ -2,11 +2,11 @@
 
 ![Status](https://img.shields.io/badge/status-archived-red) ![Status](https://img.shields.io/badge/mojo-legacy-orange)
 
-## ⚠️ Repository Status## Historical Context
+## ⚠️ Repository Status
 
 This repository explored efficient string concatenation techniques in early Mojo versions. The techniques demonstrated here (pre-allocation strategies, capacity doubling) are similar to those now incorporated in the modern Mojo standard library's `String` implementation.
 
-**Note**: This repository is archived and no longer accepting contributions. For current Mojo string optimization techniques, please refer to the official [Mojo documentation](https://docs.modular.com/mojo).
+**Note**: This repository is archived and no longer accepting contributions.
 
 ---
 
